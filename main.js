@@ -1,21 +1,4 @@
-/* 
-Write a isValidPassword function 
-
-It accepts 2 arguments: password and username 
-
-Password must: 
-
-- be atleast 8 characters 
-
-- cannot contain spaces 
-
-- cannot contain the username 
-
-If all requirements are met, return true, 
-
-otherwise return false
-*/
-
+/*Exercise Wednesday 23th octh
 
 function isValidPassword(password, username) {
   
@@ -37,3 +20,13 @@ console.log(isValidPassword("alejandro", "alejandro"));
 console.log(isValidPassword("pass word", "Maria"));
 console.log(isValidPassword("124", "Maria"));
 console.log(isValidPassword("12345678", "Lorena"));
+
+*/
+
+
+//Exercise Monday nov. 4th
+
+const target = Math.floor(Math.random () * 10);
+let guess = null;
+
+console.log(target);
