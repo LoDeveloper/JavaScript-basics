@@ -58,32 +58,28 @@ Create a function sumEvenNumbers that accepts an array as an argument.
 
 Use a for loop to iterate through the array*/
 
-function guessNumber() {
 
-const targetNumber = Math.floor(Math.random () * 10) + 1;
-let guess = false;
+function guessNumberGame() {
 
-
-
-while (guess !== targetNumber) {
-    guess = parseInt(prompt("Guess a number between 1 a 10: "), 10);
-    
-    if (isNaN(guess)) {
+    const randomNumber = Math.floor(Math.random() * 10) + 1;
+    let guess = false;
+  
+    while (guess !== randomNumber) {
+      guess = parseInt(prompt("Guess a number between 1 and 10:"), 10);
+  
+      if (isNaN(guess)) {
         alert("Please enter a valid number.");
-        console.log ("Invalid number: " + guess, "try again");
-    } else if (guess < targetNumber) {
-        alert("Too low! Try again.");
-        console.log ("Number guessed: " + guess, "try again");
-    } else if (guess > targetNumber) {
-        alert("Too high! Try again.");
-        console.log ("Number guessed: " + guess, "try again");
-    } else {
-        alert("Congratulations! You have guess the number!");
-        console.log ("Number guessed: " + guess, "try again");
+        continue;
+      }
+
+      if (guess < randomNumber) {
+        alert("The number is too low! Try again.");
+      } else if (guess > randomNumber) {
+        alert("The number is too high! Try again.");
+      } else {
+        alert("Congratulations! You guessed the correct number: " + randomNumber);
+      }
     }
-
 }
 
-}
-
-guessNumberGmae();
+guessNumberGame();
