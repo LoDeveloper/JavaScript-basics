@@ -59,7 +59,7 @@ Create a function sumEvenNumbers that accepts an array as an argument.
 Use a for loop to iterate through the array*/
 
 
-function guessNumberGame() {
+/*function guessNumberGame() {
 
     const randomNumber = Math.floor(Math.random() * 10) + 1;
     let guess = false;
@@ -83,3 +83,26 @@ function guessNumberGame() {
 }
 
 guessNumberGame();
+*/
+
+
+//Generate an array of random numbers
+
+function generateRandomArray(length) {
+
+  let randomArray = [];
+
+  for (let i = 0; i < length; i++) {
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      
+      randomArray.push(randomNumber);
+  }
+
+  return randomArray;
+}
+
+// Example usage:
+console.log(generateRandomArray(8));
+console.log(generateRandomArray(5));
+console.log(generateRandomArray(12));
+
