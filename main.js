@@ -59,6 +59,10 @@ Create a function sumEvenNumbers that accepts an array as an argument.
 Use a for loop to iterate through the array*/
 
 
+
+
+//Guess the Number
+
 /*function guessNumberGame() {
 
     const randomNumber = Math.floor(Math.random() * 10) + 1;
