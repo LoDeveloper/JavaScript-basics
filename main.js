@@ -101,7 +101,6 @@ function generateRandomArray(length) {
   return randomArray;
 }
 
-// Example usage:
 console.log(generateRandomArray(8));
 console.log(generateRandomArray(5));
 console.log(generateRandomArray(12));
