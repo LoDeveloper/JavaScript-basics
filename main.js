@@ -191,89 +191,81 @@ EXTRA: exitAccount, should be a function
 
 
 
-const account = {
-                                                        
-    accountName: "Lorena Ojeda",                          
-     balance: 1000,
+ const account = {
+    accountName: "Lorena Ojeda",
+    balance: 1000,
 
-                                                        
-  getBalance: function() {
-      console.log(`Your balance is: $${this.balance}`);
-  },
+    getBalance: function() {
+        console.log(`Your balance is: $${this.balance}`);
+    },
 
-                                                        
-  deposit: function(amount) {
-      if (amount > 0) {
-          this.balance += amount;
-          console.log(`Deposited $${amount}. New balance: $${this.balance}`);
-      } else {
-          this.accountError("Invalid deposit amount. Please enter again.");
-      }
-  },
+    deposit: function(amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            console.log(`Deposited $${amount}. New balance: $${this.balance}`);
+        } else {
+            this.accountError("Invalid deposit amount. Please enter again.");
+        }
+    },
 
-                                                        
-  withdrawal: function(amount) {
-      if (amount > 0 && amount <= this.balance) {
-          this.balance -= amount;
-          console.log(`Withdrew $${amount}. New balance: $${this.balance}`);
-      } else if (amount > this.balance) {
-          this.accountError("Insufficient balance for withdrawal.");
-      } else {
-          this.accountError("Invalid withdrawal amount. Please enter again.");
-      }
-  },
+    withdrawal: function(amount) {
+        if (amount > 0 && amount <= this.balance) {
+            this.balance -= amount;
+            console.log(`Withdrew $${amount}. New balance: $${this.balance}`);
+        } else if (amount > this.balance) {
+            this.accountError("Insufficient balance for withdrawal.");
+        } else {
+            this.accountError("Invalid withdrawal amount. Please enter again.");
+        }
+    },
 
-                                                        
-  getAccountName: function() {
-      console.log(`Account Holder: ${this.accountName}`);
-  },
+    getAccountName: function() {
+        console.log(`Account Holder: ${this.accountName}`);
+    },
 
-                                                        
-  accountError: function(message) {
-      console.log(`Error: ${message}`);
-  },
+    accountError: function(message) {
+        console.log(`Error: ${message}`);
+    },
 
-                                                        
-  exitAccount: function() {
-      console.log("Exiting the account...");
-      this.accountName = null;
-      this.balance = 0;
-  }
+    exitAccount: function() {
+        console.log("Exiting the account...");
+        this.accountName = null;
+        this.balance = 0;
+    }
 };
 
-                                                       
 function atm() {
-  let action;
-  do {
-      action = prompt("Check your account: \n1. View Balance \n2. Deposit \n3. Withdraw \n4. View Account Name \n5. Exit Account \n6. Quit");
+    let message;
 
-      switch (action) {
-          case "1":
-              account.getBalance();
-              break;
-          case "2":
-              const depositAmount = parseFloat(prompt("Enter amount to deposit:"));
-              account.deposit(depositAmount);
-              break;
-          case "3":
-              const withdrawalAmount = parseFloat(prompt("Enter amount to withdraw:"));
-              account.withdrawal(withdrawalAmount);
-              break;
-          case "4":
-              account.getAccountName();
-              break;
-          case "5":
-              account.exitAccount();
-              console.log("Account exited.");
-              action = "6"; 
-              break;
-          case "6":
-              console.log("Thank you for using our ATM!");
-              break;
-          default:
-              console.log("Invalid choice. Please try again.");
-      }
-  } while (action !== "6");
+    do {
+        message = parseFloat(prompt("Select a choice: 1. View Balance 2. Make a deposit 3. Withdraw 4. View Account Name 5. Exit Account 6. Quit"));
+
+        switch (message) {
+            case 1:
+                account.getBalance();
+                break;
+            case 2:
+                const depositAmount = parseFloat(prompt("Enter amount to deposit:"));
+                account.deposit(depositAmount);
+                break;
+            case 3:
+                const withdrawalAmount = parseFloat(prompt("Enter amount to withdraw:"));
+                account.withdrawal(withdrawalAmount);
+                break;
+            case 4:
+                account.getAccountName();
+                break;
+            case 5:
+                account.exitAccount();
+                console.log("Account exited.");
+                break;
+            case 6:
+                console.log("Thank you for using our ATM!");
+                break;
+            default:
+                console.log("Invalid choice. Please try again.");
+        }
+    } while (message !== 6);
 }
 
 atm();
